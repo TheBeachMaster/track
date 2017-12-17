@@ -96,7 +96,7 @@ void initiaLizeLCD(void)
 void processReadings(int32_t value, int32_t lon, int32_t lat)
 {
     char values[50] ;
-    snprintf(values,16,"%d",value);
+    snprintf(values,16,"%zu",value);
     //if value is above 1024/2 something has happened
     if(value >= 500)
     {
@@ -120,8 +120,8 @@ void processReadings(int32_t value, int32_t lon, int32_t lat)
 
 void processLocation(String locPayload)
 {
-    char gps_data[15];
-    locPayload.toCharArray(gps_data, 15);
+    char gps_data[locPayload.length()+1];
+    locPayload.toCharArray(gps_data, locPayload.length()+1);
     longitude = atoi(gps_data[0]);
     latitude = atoi(gps_data[1]);
 }
