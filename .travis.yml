@@ -1,0 +1,25 @@
+language: python
+python:  
+    - "2.7"
+
+sudo: false 
+cache:  
+    directories: 
+        - "~/.platformio" 
+install:
+      - pip install -U platformio 
+      - wget https://github.com/adafruit/Adafruit_MQTT_Library/archive/0.17.0.zip -O /tmp/Adafruit_MQTT_Library.zip
+      - unzip /tmp/Adafruit_MQTT_Library.zip -d /tmp
+      - platformio lib -g 1287 
+      - mkdir /tmp/app
+      - cd /tmp/app 
+      - git clone https://github.com/TheBeachMaster/track.git
+      - git checkout master
+
+script:
+        - platformio ci /tmp/app/core --board=megaatmega2560 --lib="." --lib="/tmp/Adafruit_MQTT_Library"
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change
