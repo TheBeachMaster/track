@@ -18,7 +18,7 @@ install:
       - git checkout master
 
 script:
-        - platformio ci /tmp/app/core --board=megaatmega2560 --lib="." --lib="/tmp/Adafruit_MQTT_Library-0.17.0"
+        - platformio ci /tmp/app/track/core --board=megaatmega2560 --lib="." --lib="/tmp/Adafruit_MQTT_Library-0.17.0"
 
 notifications:
   email:
