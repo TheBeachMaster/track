@@ -89,7 +89,7 @@ void cc3000Connect()
 void processReadings(int32_t value, int32_t lon, int32_t lat)
 {
     char values[50] ;
-    snprintf(values,16,"%zu",value);
+    snprintf(values,16,"%lu",value);
     //if value is above 1024/2 something has happened
     if(value >= 500)
     {
