@@ -25,8 +25,8 @@ Adafruit_MQTT_Publish readings = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/fee
 Adafruit_MQTT_Publish location_lat = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/lat");
 Adafruit_MQTT_Publish location_long = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/long");
 int32_t longitude,latitude;
-#define WLAN_SSID "Lenovo A7010"
-#define WLAN_PASS "Infrared@1944"
+char WLAN_SSID[] = "Lenovo A7010"
+char WLAN_PASS[] =  "Infrared@1944"
 #define WLAN_SEC WLAN_SEC_WPA2
 
 void MQTT_connect();
