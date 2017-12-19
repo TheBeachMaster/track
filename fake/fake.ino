@@ -6,7 +6,7 @@
 
 #define ADAFRUIT_CC3000_IRQ   3  // MUST be an interrupt pin!
 #define ADAFRUIT_CC3000_VBAT  5
-#define ADAFRUIT_CC3000_CS    10
+#define ADAFRUIT_CC3000_CS    9
 
 Adafruit_CC3000 cc3000 = Adafruit_CC3000(ADAFRUIT_CC3000_CS, ADAFRUIT_CC3000_IRQ, ADAFRUIT_CC3000_VBAT, SPI_CLOCK_DIVIDER);
 Adafruit_CC3000_Client cc3000client = Adafruit_CC3000_Client();
@@ -15,8 +15,8 @@ int32_t vibrationPinValue;
 
 #define AIO_SERVER      "io.adafruit.com"
 #define AIO_SERVERPORT  1883              
-#define AIO_USERNAME    ""
-#define AIO_KEY         ""
+#define AIO_USERNAME    "ArthurKen"
+#define AIO_KEY         "c3fc507024c24cb19935eb9b896d11b8"
 
 
 
@@ -25,8 +25,8 @@ Adafruit_MQTT_Publish readings = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/fee
 Adafruit_MQTT_Publish location_lat = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/lat");
 Adafruit_MQTT_Publish location_long = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/long");
 int32_t longitude,latitude;
-char WLAN_SSID[] = "Lenovo A7010";
-char WLAN_PASS[] =  "Infrared@1944";
+char WLAN_SSID[] = "Thitima!";
+char WLAN_PASS[] =  "F8Fighters!";
 #define WLAN_SEC WLAN_SEC_WPA2
 
 void MQTT_connect();
@@ -44,7 +44,8 @@ void setup()
 
 void loop()
 {
-vibrationPinValue = random(330, 800);    
+vibrationPinValue = random(330, 800);  
+Serial.println(vibrationPinValue);  
 longitude = random(32,42);
 latitude = random(35);
 processReadings(vibrationPinValue, longitude, latitude);
@@ -54,9 +55,14 @@ void cc3000Connect()
 {
 	//If we encountered an error Initializing CC3000
 	Serial.println(F("Attempting CC300 Init"));
-	if (!cc3000.begin()) {
-		Serial.println("An error occured Initializing CC3000");
-		for (;;);
+	// if (!cc3000.begin()) {
+	// 	Serial.println("An error occured Initializing CC3000");
+	// 	for (;;);
+	// }
+	while (!cc3000.begin())
+	{
+		Serial.println("Initializing CC3000");
+		Serial.print(".");
 	}
 	//Meanwhile, Delete Old Connection Pofiles and Attempt to Connect to our network
 	Serial.println(F("Attempting to delete old profiles"));
@@ -89,23 +95,17 @@ void cc3000Connect()
 void processReadings(int32_t value, int32_t lon, int32_t lat)
 {
     char values[50] ;
-    snprintf(values,16,"%lu",value);
-    //if value is above 1024/2 something has happened
+	snprintf(values,16,"%lu",value);
+	//if value is above 1024/2 something has happened
+	Serial.println(values);
+	readings.publish(value);
+	location_long.publish(lon);
+	location_lat.publish(lat);
     if(value >= 500)
     {
         Serial.println("CRITICAL VALUES");
-        if (!readings.publish(value) && !location_long.publish(lon) && !location_lat.publish(lat)) {
-            Serial.println("ERROR CODE 2"); // failed
-          } else {
-            Serial.println(values);
-          }
-    } else
-    {
-    do{
-        Serial.println(values);
-        delay(500);
-    }while(value < 500);
-}
+	} 
+	delay(3000);
 }
 bool displayConnectionDetails(void)
 {

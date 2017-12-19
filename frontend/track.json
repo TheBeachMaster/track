@@ -1,0 +1,107 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"title": "Map",
+			"width": 1,
+			"row": {
+				"1": 1,
+				"3": 1
+			},
+			"col": {
+				"1": 1,
+				"3": 1
+			},
+			"col_width": "6",
+			"widgets": [
+				{
+					"type": "google_map",
+					"settings": {
+						"lat": "datasources[\"Adafruit Latitude\"][\"value\"]",
+						"lon": "datasources[\"Adafruit Longitude\"][\"value\"]"
+					}
+				}
+			]
+		},
+		{
+			"title": "Sensor Readngs",
+			"width": 1,
+			"row": {
+				"1": 11,
+				"3": 11,
+				"5": 11
+			},
+			"col": {
+				"1": 1,
+				"3": 1,
+				"5": 1
+			},
+			"col_width": "6",
+			"widgets": [
+				{
+					"type": "sparkline",
+					"settings": {
+						"title": "Vibrations",
+						"value": [
+							"datasources[\"Adafruit Vibrations\"][\"value\"]"
+						],
+						"include_legend": false
+					}
+				}
+			]
+		}
+	],
+	"datasources": [
+		{
+			"name": "Adafruit Latitude",
+			"type": "JSON",
+			"settings": {
+				"url": "https://io.adafruit.com/api/v2/ArthurKen/feeds/lat/data/last",
+				"use_thingproxy": false,
+				"refresh": 10,
+				"method": "GET",
+				"headers": [
+					{
+						"name": "x-aio-key",
+						"value": "c3fc507024c24cb19935eb9b896d11b8"
+					}
+				]
+			}
+		},
+		{
+			"name": "Adafruit Longitude",
+			"type": "JSON",
+			"settings": {
+				"url": "https://io.adafruit.com/api/v2/ArthurKen/feeds/long/data/last",
+				"use_thingproxy": false,
+				"refresh": 10,
+				"method": "GET",
+				"headers": [
+					{
+						"name": "x-aio-key",
+						"value": "c3fc507024c24cb19935eb9b896d11b8"
+					}
+				]
+			}
+		},
+		{
+			"name": "Adafruit Vibrations",
+			"type": "JSON",
+			"settings": {
+				"url": "https://io.adafruit.com/api/v2/ArthurKen/feeds/readings/data/last",
+				"use_thingproxy": false,
+				"refresh": 10,
+				"method": "GET",
+				"headers": [
+					{
+						"name": "x-aio-key",
+						"value": "c3fc507024c24cb19935eb9b896d11b8"
+					}
+				]
+			}
+		}
+	],
+	"columns": 3
+}

@@ -23,9 +23,9 @@ TinyGsm modem(SerialAT);
 TinyGsmClient gsmClient(modem);
 
 #define AIO_SERVER      "io.adafruit.com"
-#define AIO_SERVERPORT  1883              
-#define AIO_USERNAME    ""
-#define AIO_KEY         ""
+#define AIO_SERVERPORT  1883
+#define AIO_USERNAME    "ArthurKen"
+#define AIO_KEY         "c3fc507024c24cb19935eb9b896d11b8"
 
 
 /* LCD Circuit Config
