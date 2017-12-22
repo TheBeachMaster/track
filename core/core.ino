@@ -196,7 +196,7 @@ void MQTT_connect() {
 
 void runMotor(void)
 {
-    int speed = 135; // Less than 2555
+    int speed = 135; // Less than 255
     shouldLatch ? analogWrite(motorPin, 0) : analogWrite(motorPin, speed);
 }
 
