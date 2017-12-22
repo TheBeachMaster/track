@@ -4,10 +4,9 @@
 #include <Adafruit_MQTT.h>
 #include <Adafruit_MQTT_Client.h>
 #include <SoftwareSerial.h> // Necessary for Arduino Uno
-#include <Servo.h>
 
-Servo motor;
-byte motorPin = 3; // ? TODO
+boolean shouldLatch = false; //Kill Motor
+byte motorPin = 8; // ? TODO
 
 #define OK_LED_PIN 13
 
@@ -46,14 +45,12 @@ The circuit:
 const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
-int32_t vibrationPinValue;
-
 Adafruit_MQTT_Client mqtt(&gsmClient, AIO_SERVER, AIO_SERVERPORT, AIO_USERNAME, AIO_KEY);
 Adafruit_MQTT_Publish readings = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/readings");
 Adafruit_MQTT_Publish location_lat = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/lat");
 Adafruit_MQTT_Publish location_long = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/long");
-int32_t longitude,latitude;
-void MQTT_connect();
+int32_t longitude, latitude, vibrationPinValue;
+void MQTT_connect(); // Resolve ?
 
 void setup(void)
 {
@@ -65,7 +62,8 @@ void setup(void)
     {
         ;
     }
-    pinMode(OK_LED_PIN,OUTPUT);
+    pinMode(OK_LED_PIN, OUTPUT);
+    pinMode(motorPin, OUTPUT);
     configureGsm();
 }
 
@@ -74,6 +72,8 @@ void loop(void)
     MQTT_connect();
     delay(100);
     int data = getVibrationValue();
+    data > 500 ? shouldLatch == true : shouldLatch;
+    runMotor();
     String latlong = getLocation();
     processLocation(latlong);
     processReadings(data, longitude, latitude);
@@ -98,24 +98,19 @@ void processReadings(int32_t value, int32_t lon, int32_t lat)
     char values[50] ;
     snprintf(values,16,"%lu",value);
     //if value is above 1024/2 something has happened
+    readings.publish(value);
+    location_long.publish(lon);
+    location_lat.publish(lat);
     if(value >= 500)
     {
         lcd.print("CRITICAL VALUES");
-        if (!readings.publish(value) && !location_long.publish(lon) && !location_lat.publish(lat)) {
-            lcd.print("ERROR CODE 2"); // failed
-          } else {
-            lcd.print(values);
-          }
-    } else
-    {
-    do
-    {   
+        lcd.print(values);
+    }   
         lcd.clear(); // This could cause potential problems .. Remove if need be
         lcd.print(values);
         delay(500);
         lcd.clear();
-    }while(value < 500);
-    }
+        delay(1200);
 }
 
 void processLocation(String locPayload)
@@ -199,6 +194,12 @@ void MQTT_connect() {
     lcd.clear();
   }
 
+void runMotor(void)
+{
+    int speed = 135; // Less than 2555
+    shouldLatch ? analogWrite(motorPin, 0) : analogWrite(motorPin, speed);
+}
+
 #if defined(TINY_GSM_MODEM_SIM808)
 String getLocation(void)
 {
@@ -209,3 +210,4 @@ String getLocation(void)
 //   modem.disableGPS();
 //   DBG("GPS raw data:", gps_raw);
 #endif
+
