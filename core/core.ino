@@ -6,7 +6,7 @@
 #include <SoftwareSerial.h> // Necessary for Arduino Uno
 
 boolean shouldLatch = false; //Kill Motor
-byte motorPin = 8; // ? TODO
+byte motorPin = 8; 
 
 #define OK_LED_PIN 13
 
@@ -23,8 +23,8 @@ TinyGsmClient gsmClient(modem);
 
 #define AIO_SERVER      "io.adafruit.com"
 #define AIO_SERVERPORT  1883
-#define AIO_USERNAME    "ArthurKen"
-#define AIO_KEY         "c3fc507024c24cb19935eb9b896d11b8"
+#define AIO_USERNAME    ""
+#define AIO_KEY         ""
 
 
 /* LCD Circuit Config
