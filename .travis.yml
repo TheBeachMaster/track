@@ -10,7 +10,7 @@ install:
       - pip install -U platformio 
       - wget https://github.com/adafruit/Adafruit_MQTT_Library/archive/0.17.0.zip -O /tmp/Adafruit_MQTT_Library.zip
       - unzip /tmp/Adafruit_MQTT_Library.zip -d /tmp
-      - platformio lib -g install 17 1287 
+      - platformio lib -g install 17 1287 714 299
       - mkdir /tmp/app
       - cd /tmp/app 
       - git clone https://github.com/TheBeachMaster/track.git
@@ -19,7 +19,8 @@ install:
 
 script:
         - platformio ci /tmp/app/track/core --board=megaatmega2560 --lib="." --lib="/tmp/Adafruit_MQTT_Library-0.17.0"
-        - platformio ci /tmp/app/track/fake --board=megaatmega2560 --lib="." --lib="/tmp/Adafruit_MQTT_Library-0.17.0"
+        - platformio ci /tmp/app/track/simulcc3000 --board=megaatmega2560 --lib="." --lib="/tmp/Adafruit_MQTT_Library-0.17.0"
+        - platformio ci /tmp/app/track/simul101 --board=megaatmega2560 --lib="." --lib="/tmp/Adafruit_MQTT_Library-0.17.0"
 
 notifications:
   email:
