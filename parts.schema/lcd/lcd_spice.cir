@@ -1,0 +1,6 @@
+lcd
+R2 4 8 220
+
+.TRAN 1ms 100ms
+* .AC DEC 100 100 1MEG
+.END
