@@ -59,17 +59,15 @@ void loop() {
 	double ds1 = s1.toFloat()/100;
 	String s2 = rawData[2];
 	double ds2 = s2.toFloat()/100;
-	Serial.print("S1: ");
-	Serial.println(ds1);
-	Serial.print("S2: ");
-	Serial.println(ds2);
+	// Serial.print("S1: "); Longs
+	// Serial.println(ds1);
+	// Serial.print("S2: "); Lats
+	// Serial.println(ds2);
 randomSeed(analogRead(0));
 MQTT_connect();
-vibrationPinValue = random(150, 800);  
-// longitude = random(32,42);
-longitude = ds2;
-// latitude = random(35);
-latitude = ds1;
+vibrationPinValue = random(150, 800); 
+longitude = ds1;
+latitude = ds2;
 processReadings(vibrationPinValue, longitude, latitude);
 }
 void processReadings(int32_t value, float lon, float lat)
