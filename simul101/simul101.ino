@@ -3,8 +3,8 @@
 #include "Adafruit_MQTT_Client.h"
 #include <WiFi101.h>
 
-char ssid[] = "AFRONANA";     
-char pass[] = "Nanafam4"; 
+char ssid[] = "AfricasTalking IoT GW";     
+char pass[] = "africastalking"; 
 int status = WL_IDLE_STATUS;
 
 /************************* Adafruit.io Setup *********************************/
@@ -26,7 +26,8 @@ Adafruit_MQTT_Client mqtt(&client, AIO_SERVER, AIO_SERVERPORT, AIO_USERNAME, AIO
 Adafruit_MQTT_Publish readings = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/readings");
 Adafruit_MQTT_Publish location_lat = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/lat");
 Adafruit_MQTT_Publish location_long = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/long");
-int32_t longitude,latitude,vibrationPinValue;
+int32_t vibrationPinValue;
+float  longitude,latitude;
 
 
 #define LEDPIN 13
@@ -53,15 +54,25 @@ void setup() {
 
 
 void loop() {
-    
+    char* rawData[] = {"0","4043.576433","10512.5792","58.647405","20150601201258.000","64","12","0.548363","100.442406"};
+	String s1 = rawData[1];
+	double ds1 = s1.toFloat()/100;
+	String s2 = rawData[2];
+	double ds2 = s2.toFloat()/100;
+	Serial.print("S1: ");
+	Serial.println(ds1);
+	Serial.print("S2: ");
+	Serial.println(ds2);
 randomSeed(analogRead(0));
 MQTT_connect();
 vibrationPinValue = random(150, 800);  
-longitude = random(32,42);
-latitude = random(35);
+// longitude = random(32,42);
+longitude = ds2;
+// latitude = random(35);
+latitude = ds1;
 processReadings(vibrationPinValue, longitude, latitude);
 }
-void processReadings(int32_t value, int32_t lon, int32_t lat)
+void processReadings(int32_t value, float lon, float lat)
 {
     char values[50] ;
 	snprintf(values,16,"%lu",value);
@@ -71,8 +82,8 @@ void processReadings(int32_t value, int32_t lon, int32_t lat)
 	 Serial.print(F("Latitude: "));
 	 Serial.println(lat);
 	readings.publish(value);
-	location_long.publish(lon);
-	location_lat.publish(lat);
+	location_long.publish(lon,3);
+	location_lat.publish(lat,3);
     if(value >= 500)
     {
         Serial.println("CRITICAL VALUES");
