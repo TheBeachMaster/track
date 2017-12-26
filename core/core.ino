@@ -49,7 +49,8 @@ Adafruit_MQTT_Client mqtt(&gsmClient, AIO_SERVER, AIO_SERVERPORT, AIO_USERNAME, 
 Adafruit_MQTT_Publish readings = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/readings");
 Adafruit_MQTT_Publish location_lat = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/lat");
 Adafruit_MQTT_Publish location_long = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/long");
-int32_t longitude, latitude, vibrationPinValue;
+int32_t vibrationPinValue;
+float longitude, latitude;
 void MQTT_connect(); // Resolve ?
 
 void setup(void)
@@ -74,7 +75,7 @@ void loop(void)
     int data = getVibrationValue();
     data > 500 ? shouldLatch == true : shouldLatch;
     runMotor();
-    String latlong = getLocation();
+    char * latlong  = getLocation();
     processLocation(latlong);
     processReadings(data, longitude, latitude);
 }
@@ -93,14 +94,14 @@ void initiaLizeLCD(void)
      lcd.clear();
 }
 
-void processReadings(int32_t value, int32_t lon, int32_t lat)
+void processReadings(int32_t value, float lon, float lat)
 {
     char values[50] ;
     snprintf(values,16,"%lu",value);
     //if value is above 1024/2 something has happened
     readings.publish(value);
-    location_long.publish(lon);
-    location_lat.publish(lat);
+    location_long.publish(lon, 3);
+    location_lat.publish(lat, 3);
     if(value >= 500)
     {
         lcd.print("CRITICAL VALUES");
@@ -113,12 +114,16 @@ void processReadings(int32_t value, int32_t lon, int32_t lat)
         delay(1200);
 }
 
-void processLocation(String locPayload)
+void processLocation(char * locPayload)
 {
-    char gps_data[locPayload.length()+1];
-    locPayload.toCharArray(gps_data, locPayload.length()+1);
-    longitude = atoi(gps_data[0]);
-    latitude = atoi(gps_data[1]);
+   //  char* gps_data[50] = locPayload;
+    // locPayload.toCharArray(gps_data, locPayload.length()+1);
+    String lt(locPayload[2]);
+    String lg(locPayload[1]);
+    double l_t = lt.toFloat()/100;
+    double l_g = lg.toFloat()/100;
+    longitude = l_g;
+    latitude = l_t;
 }
 
 void configureGsm(void)
@@ -201,11 +206,15 @@ void runMotor(void)
 }
 
 #if defined(TINY_GSM_MODEM_SIM808)
-String getLocation(void)
+char * getLocation(void)
 {
+    char *  gps_raw  = (char *) malloc (100);
     modem.enableGPS();
-    String gps_raw = modem.getGPSraw();
+    String gps_p = modem.getGPSraw();
+    gps_p.toCharArray(gps_raw,100);
     return gps_raw;
+    // "0,4043.576433,7400.316980,58.647405,20150601201258.000,64,12,0.548363,100.442406"
+
 }
 //   modem.disableGPS();
 //   DBG("GPS raw data:", gps_raw);
