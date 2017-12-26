@@ -23,8 +23,8 @@ TinyGsmClient gsmClient(modem);
 
 #define AIO_SERVER      "io.adafruit.com"
 #define AIO_SERVERPORT  1883
-#define AIO_USERNAME    ""
-#define AIO_KEY         ""
+#define AIO_USERNAME    "ArthurKen"
+#define AIO_KEY         "c3fc507024c24cb19935eb9b896d11b8"
 
 
 /* LCD Circuit Config
@@ -116,8 +116,6 @@ void processReadings(int32_t value, float lon, float lat)
 
 void processLocation(char * locPayload)
 {
-   //  char* gps_data[50] = locPayload;
-    // locPayload.toCharArray(gps_data, locPayload.length()+1);
     String lt(locPayload[2]);
     String lg(locPayload[1]);
     double l_t = lt.toFloat()/100;
@@ -205,11 +203,11 @@ void runMotor(void)
     shouldLatch ? analogWrite(motorPin, 0) : analogWrite(motorPin, speed);
 }
 
-#if defined(TINY_GSM_MODEM_SIM808)
+// #if defined(TINY_GSM_MODEM_SIM808)
 char * getLocation(void)
 {
-    char *  gps_raw  = (char *) malloc (100);
     modem.enableGPS();
+    char *  gps_raw  = (char *) malloc (100);
     String gps_p = modem.getGPSraw();
     gps_p.toCharArray(gps_raw,100);
     return gps_raw;
@@ -218,5 +216,5 @@ char * getLocation(void)
 }
 //   modem.disableGPS();
 //   DBG("GPS raw data:", gps_raw);
-#endif
+// #endif
 
