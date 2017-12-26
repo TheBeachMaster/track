@@ -75,7 +75,11 @@ void loop(void)
     int data = getVibrationValue();
     data > 500 ? shouldLatch == true : shouldLatch;
     runMotor();
-    char * latlong  = getLocation();
+    char *  gps_raw  = (char *) malloc (100);
+    String gps_p = modem.getGPSraw();
+    gps_p.toCharArray(gps_raw,100);
+    // char * latlong  = getLocation();
+    char * latlong  = gps_raw;
     processLocation(latlong);
     processReadings(data, longitude, latitude);
 }
@@ -171,6 +175,7 @@ lcd.clear();
   digitalWrite(OK_LED_PIN,1);
   delay(500);
   digitalWrite(OK_LED_PIN,0);
+    modem.enableGPS();
 }
 
 void MQTT_connect() {
@@ -203,7 +208,7 @@ void runMotor(void)
     shouldLatch ? analogWrite(motorPin, 0) : analogWrite(motorPin, speed);
 }
 
-// #if defined(TINY_GSM_MODEM_SIM808)
+#if defined(TINY_GSM_MODEM_SIM808)
 char * getLocation(void)
 {
     modem.enableGPS();
@@ -216,5 +221,5 @@ char * getLocation(void)
 }
 //   modem.disableGPS();
 //   DBG("GPS raw data:", gps_raw);
-// #endif
+#endif
 
