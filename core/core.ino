@@ -208,18 +208,20 @@ void runMotor(void)
     shouldLatch ? analogWrite(motorPin, 0) : analogWrite(motorPin, speed);
 }
 
-#if defined(TINY_GSM_MODEM_SIM808)
-char * getLocation(void)
-{
-    modem.enableGPS();
-    char *  gps_raw  = (char *) malloc (100);
-    String gps_p = modem.getGPSraw();
-    gps_p.toCharArray(gps_raw,100);
-    return gps_raw;
-    // "0,4043.576433,7400.316980,58.647405,20150601201258.000,64,12,0.548363,100.442406"
+// We wont need this function since it's causing Build Errors in Travis
 
-}
-//   modem.disableGPS();
-//   DBG("GPS raw data:", gps_raw);
-#endif
+// #if defined(TINY_GSM_MODEM_SIM808)
+// char * getLocation(void)
+// {
+//     modem.enableGPS();
+//     char *  gps_raw  = (char *) malloc (100);
+//     String gps_p = modem.getGPSraw();
+//     gps_p.toCharArray(gps_raw,100);
+//     return gps_raw;
+//     // "0,4043.576433,7400.316980,58.647405,20150601201258.000,64,12,0.548363,100.442406"
+
+// }
+// //   modem.disableGPS();
+// //   DBG("GPS raw data:", gps_raw);
+// #endif
 
