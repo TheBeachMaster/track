@@ -33,8 +33,8 @@ The circuit:
 * LCD Enable pin to digital pin 11
 * LCD D4 pin to digital pin 5
 * LCD D5 pin to digital pin 4
-* LCD D6 pin to digital pin 3
-* LCD D7 pin to digital pin 2
+* LCD D6 pin to digital pin 6
+* LCD D7 pin to digital pin 7
 * LCD R/W pin to ground
 * LCD VSS pin to ground
 * LCD VCC pin to 5V
@@ -42,7 +42,7 @@ The circuit:
 * ends to +5V and ground
 * wiper to LCD VO pin (pin 3)
 */
-const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 6, d7 = 7;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
 Adafruit_MQTT_Client mqtt(&gsmClient, AIO_SERVER, AIO_SERVERPORT, AIO_USERNAME, AIO_KEY);
