@@ -158,7 +158,7 @@ Adafruit_MQTT_Publish readings = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/fee
 Adafruit_MQTT_Publish location_lat = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/lat");
 Adafruit_MQTT_Publish location_long = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/long");
 
-const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2; // LCD pin setup
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 6, d7 = 7; // LCD pin setup
 ```
 
 We'll also initialize instances of several classes used in our code, such as LCD and GSM (modem).
