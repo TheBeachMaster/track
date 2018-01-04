@@ -1,0 +1,6 @@
+tilt_sensor
+R1 1 0 220
+
+.TRAN 1ms 100ms
+* .AC DEC 100 100 1MEG
+.END
