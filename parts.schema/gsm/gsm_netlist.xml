@@ -1,584 +1,504 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!-- Created with Fritzing (http://www.fritzing.org/) -->
-<netlist sketch="gsm.fzz" date="Fri Dec 22 22:57:56 2017">
+<netlist date="Thu Jan 4 20:36:13 2018" sketch="gsm.fzz">
  <net>
-  <connector id="connector90" name="+5V">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="GND" id="connector237">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
-  <connector id="connector344" name="5V">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="GND" id="connector260">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
-  <connector id="connector258" name="5V">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="GND" id="connector259">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
-  <connector id="connector343" name="5V">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="GND" id="connector378">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
- </net>
- <net>
-  <connector id="connector92" name="GND">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
-  </connector>
-  <connector id="connector237" name="GND">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
-  </connector>
-  <connector id="connector378" name="GND">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
-  </connector>
-  <connector id="connector377" name="GND">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
-  </connector>
-  <connector id="connector260" name="GND">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
-  </connector>
-  <connector id="connector259" name="GND">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
-  </connector>
-  <connector id="connector98" name="Key">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
-  </connector>
- </net>
- <net>
-  <connector id="connector241" name="D10 PWM">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
-  </connector>
-  <connector id="connector96" name="TXD">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="GND" id="connector377">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
- </net>
- <net>
-  <connector id="connector238" name="D13 PWM">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
-  </connector>
-  <connector id="connector95" name="RXD">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
-  </connector>
- </net>
- <net>
-  <connector id="connector94" name="Reset">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
-  </connector>
-  <connector id="connector266" name="D4 PWM">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
-  </connector>
- </net>
- <net>
-  <connector id="connector13" name="DS">
-   <part label="U1" title="74HC595" id="854390720"/>
-  </connector>
- </net>
- <net>
-  <connector id="connector2" name="Q3">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="GND" id="connector92">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
- </net>
- <net>
-  <connector id="connector7" name="GND">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="Key" id="connector98">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector3" name="Q4">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="TXD" id="connector96">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
- </net>
- <net>
-  <connector id="connector10" name="SH_CP">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="D10 PWM" id="connector241">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector6" name="Q7">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="D13 PWM" id="connector238">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
- </net>
- <net>
-  <connector id="connector1" name="Q2">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="RXD" id="connector95">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector4" name="Q5">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="D4 PWM" id="connector266">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
- </net>
- <net>
-  <connector id="connector9" name="MR">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="Reset" id="connector94">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector0" name="Q1">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="+5V" id="connector90">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
- </net>
- <net>
-  <connector id="connector12" name="OE">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="5V" id="connector344">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
- </net>
- <net>
-  <connector id="connector15" name="VCC">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="5V" id="connector258">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
- </net>
- <net>
-  <connector id="connector11" name="ST_CP">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="5V" id="connector343">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector8" name="Q7'">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="ADC" id="connector0">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector14" name="Q0">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="Mic+" id="connector102">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector5" name="Q6">
-   <part label="U1" title="74HC595" id="854390720"/>
+  <connector name="RTS" id="connector97">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector356" name="D33">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="Buzzer-" id="connector88">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector370" name="D47">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="Speaker-" id="connector105">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector236" name="AREF">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="Bat" id="connector91">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
- </net>
- <net>
-  <connector id="connector12" name="A4">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="Buzzer+" id="connector89">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector363" name="D40">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="Vio" id="connector93">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector372" name="D49">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="PWM" id="connector108">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector261" name="VIN">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="RI" id="connector99">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector376" name="D53">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="NetStat" id="connector101">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector13" name="A5">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="Mic-" id="connector103">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector265" name="D3 PWM">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="PwrStat" id="connector100">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector349" name="D26">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="Speaker+" id="connector104">
+   <part title="Adafruit FONA 808 Breakout" label="Part1" id="854389810"/>
   </connector>
  </net>
  <net>
-  <connector id="connector15" name="A7">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D49" id="connector372">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector240" name="D11 PWM">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="SDA" id="connector235">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
- </net>
- <net>
-  <connector id="connector347" name="D24">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D20/SDA" id="connector47">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector4" name="A12">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="A9" id="connector1">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector49" name="D18/TX1">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D33" id="connector356">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector371" name="D48">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D25" id="connector348">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector355" name="D32">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D12 PWM" id="connector239">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector235" name="SDA">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="SCL" id="connector234">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
-  <connector id="connector47" name="D20/SDA">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
-  </connector>
- </net>
- <net>
-  <connector id="connector9" name="A1">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D21/SCL" id="connector46">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector358" name="D35">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D17 PWM/RX2" id="connector50">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector268" name="D6 PWM">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D3 PWM" id="connector265">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector239" name="D12 PWM">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D37" id="connector360">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector243" name="D8 PWM">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D47" id="connector370">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector269" name="D7 PWM">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D40" id="connector363">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector354" name="D31">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="A15" id="connector7">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector364" name="D41">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D30" id="connector353">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector263" name="D1 TX0">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D44" id="connector367">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector361" name="D38">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D35" id="connector358">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector10" name="A2">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D36" id="connector359">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector360" name="D37">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="A12" id="connector4">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector368" name="D45">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D34" id="connector357">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector267" name="D5 PWM">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="A14" id="connector6">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector8" name="A0">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="AREF" id="connector236">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector345" name="D22">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D51" id="connector374">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector50" name="D17 PWM/RX2">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D26" id="connector349">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector234" name="SCL">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D28" id="connector351">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
-  <connector id="connector46" name="D21/SCL">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
-  </connector>
  </net>
  <net>
-  <connector id="connector346" name="D23">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D22" id="connector345">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector11" name="A3">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D24" id="connector347">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector350" name="D27">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D18/TX1" id="connector49">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector352" name="D29">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="A4" id="connector12">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector366" name="D43">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D19/RX1" id="connector48">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector51" name="D16 PWM/TX2">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D2 PWM" id="connector264">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector365" name="D42">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D27" id="connector350">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector254" name="IOREF">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D52" id="connector375">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector255" name="IOREF">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D31" id="connector354">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector375" name="D52">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="A8" id="connector0">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector257" name="3V3">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D29" id="connector352">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector351" name="D28">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="RESET" id="connector256">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector348" name="D25">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D14/TX3" id="connector53">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector264" name="D2 PWM">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D8 PWM" id="connector243">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector1" name="A9">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D46" id="connector369">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector53" name="D14/TX3">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="A2" id="connector10">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector374" name="D51">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="A5" id="connector13">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector52" name="D15/RX3">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D42" id="connector365">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector48" name="D19/RX1">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="A3" id="connector11">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector256" name="RESET">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="A10" id="connector2">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector359" name="D36">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="IOREF" id="connector254">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector242" name="D9 PWM">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D0 RX0" id="connector262">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector369" name="D46">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D50" id="connector373">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector357" name="D34">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="A13" id="connector5">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector2" name="A10">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D48" id="connector371">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector362" name="D39">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D11 PWM" id="connector240">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector3" name="A11">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="A0" id="connector8">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector262" name="D0 RX0">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D43" id="connector366">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector367" name="D44">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D41" id="connector364">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector0" name="A8">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D15/RX3" id="connector52">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector6" name="A14">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D7 PWM" id="connector269">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector7" name="A15">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D1 TX0" id="connector263">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector5" name="A13">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="VIN" id="connector261">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector373" name="D50">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="IOREF" id="connector255">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector14" name="A6">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D5 PWM" id="connector267">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector353" name="D30">
-   <part label="Part2" title="Arduino Mega 2560 (Rev3)" id="854390320"/>
+  <connector name="D45" id="connector368">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector103" name="Mic-">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="D9 PWM" id="connector242">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector100" name="PwrStat">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="D53" id="connector376">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector88" name="Buzzer-">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="A1" id="connector9">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector104" name="Speaker+">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="A6" id="connector14">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector91" name="Bat">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
-  </connector>
-  <connector id="connector89" name="Buzzer+">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="D38" id="connector361">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector99" name="RI">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="A7" id="connector15">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector97" name="RTS">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="D16 PWM/TX2" id="connector51">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector105" name="Speaker-">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="D6 PWM" id="connector268">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector108" name="PWM">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="3V3" id="connector257">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector0" name="ADC">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="D39" id="connector362">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector101" name="NetStat">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="D23" id="connector346">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector93" name="Vio">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="D32" id="connector355">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
  <net>
-  <connector id="connector102" name="Mic+">
-   <part label="Part1" title="Adafruit FONA 808 Breakout" id="854389810"/>
+  <connector name="A11" id="connector3">
+   <part title="Arduino Mega 2560 (Rev3)" label="Part2" id="854390320"/>
   </connector>
  </net>
 </netlist>
