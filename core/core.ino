@@ -7,6 +7,7 @@
 
 boolean shouldLatch = false; //Kill Motor
 byte motorPin = 8; 
+byte tiltSensorPin = 9;
 
 #define OK_LED_PIN 13
 
@@ -52,7 +53,7 @@ Adafruit_MQTT_Publish location_long = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME 
 int32_t vibrationPinValue;
 float longitude, latitude;
 void MQTT_connect(); // Resolve ?
-
+int getTiltSensorValue(byte pinNumber);
 void setup(void)
 {
     // Set Up LCD
@@ -72,8 +73,10 @@ void loop(void)
 {
     MQTT_connect();
     delay(100);
-    int data = getVibrationValue();
-    data > 500 ? shouldLatch == true : shouldLatch;
+    // int data = getVibrationValue();
+    // data > 500 ? shouldLatch = true : shouldLatch;
+    int data = getTiltSensorValue(tiltSensorPin);
+    data == 1 ? shouldLatch = true : shouldLatch;
     runMotor();
     char *  gps_raw  = (char *) malloc (100);
     String gps_p = modem.getGPSraw();
@@ -88,6 +91,12 @@ int32_t getVibrationValue(void)
 {
     vibrationPinValue = analogRead(A0);
     return vibrationPinValue;
+}
+
+int getTiltSensorValue(byte pinNumber)
+{
+    int tilt = digitalRead(pinNumber);
+    return tilt;
 }
 
 void initiaLizeLCD(void)
