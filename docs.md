@@ -245,6 +245,20 @@ Here's a look at these functions in depth
 
 Getting vibration value 
 
+For a tilt switch such as `SW-520D` 
+
+```c++
+int getTiltSensorValue(byte pinNumber)
+{
+    int tilt = digitalRead(pinNumber);
+    return tilt;
+}
+```
+
+
+
+For an analog sensor,
+
 ```c++
 int32_t getVibrationValue(void)
 {
