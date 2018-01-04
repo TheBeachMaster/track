@@ -409,3 +409,51 @@ void runMotor(void)
 }
 ```
 
+## Circuitry 
+
+### LCD 
+
+![lcd_schem](parts.schema/lcd/lcd_schem.png)
+
+
+
+![lcd-config](parts.schema/lcd/lcd-config.png)
+
+| LCD  |  Arduino   |
+| :--: | :--------: |
+|  RS  |     12     |
+|  EN  |     11     |
+| DB1  |            |
+| DB2  |            |
+| DB3  |            |
+| DB4  |     5      |
+| VSS  |    GND     |
+| VDD  |     5V     |
+|  VO  |    pot     |
+| R_W  |    GND     |
+| DB0  |            |
+| DB5  |     4      |
+| DB6  |     6      |
+| DB7  |     7      |
+|  A   | 5V via RES |
+|  K   |    GND     |
+
+### Motor 
+
+![motor-config](parts.schema/motor/motor-config.png)
+
+![motor-schem](parts.schema/motor/motor-schem.png)
+
+### SIM 808 Module 
+
+![gsm_schem](parts.schema/gsm/gsm_schem.png)
+
+![gsm-config](parts.schema/gsm/gsm-config.png)
+
+### Vibration Sensor : Tilt-switch sensor 
+
+![tilt_sensor_bb](parts.schema/sensor/sw-520d/tilt_sensor_bb.png)
+
+
+
+![tilt_sensor_schem](parts.schema/sensor/sw-520d/tilt_sensor_schem.png)
