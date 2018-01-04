@@ -202,13 +202,35 @@ In the `loop` function we're going to call on various other functions to run con
 - Properly format the location data from the GSM's GPS module 
 - Publish the data to our MQTT server 
 
+In case we're using a Tilt-switch the code should look as follow in the `loop()` section 
+
+```c++
+void loop(void)
+{
+    MQTT_connect();
+    delay(100);
+    int data = getTiltSensorValue(tiltSensorPin);
+    data == 1 ? shouldLatch = true : shouldLatch;
+    runMotor();
+    char *  gps_raw  = (char *) malloc (100);
+    String gps_p = modem.getGPSraw();
+    gps_p.toCharArray(gps_raw,100);
+    // char * latlong  = getLocation();
+    char * latlong  = gps_raw;
+    processLocation(latlong);
+    processReadings(data, longitude, latitude);
+}
+```
+
+
+
 ```c++
 void loop(void)
 {
     MQTT_connect();
     delay(100);
     int data = getVibrationValue(); // Get data from Vibration sensor
-    data > 500 ? shouldLatch == true : shouldLatch; // Controls motor
+    data > 500 ? shouldLatch = true : shouldLatch; // Controls motor
     runMotor();
     char *  gps_raw  = (char *) malloc (100);
     String gps_p = modem.getGPSraw(); // Typically looks like this "0,4043.576433,7400.316980,58.647405,20150601201258.000,64,12,0.548363,100.442406"
