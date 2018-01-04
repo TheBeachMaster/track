@@ -134,6 +134,8 @@ Next up, we define a bunch of variables we'll use in our code:
 boolean shouldLatch = false; //This boolean variable determines whether to run the DC motor or not
 byte motorPin = 8; // We have set the dc motor pin to PWM pin 8
 
+byte tiltSensorPin = 9; // Incase we're using a Tilt sensor instead of an analog sensor
+
 #define OK_LED_PIN 13 // This is the default LED pin on Arduino Mega and UNO we'll use it to indicate status
 
 /*
