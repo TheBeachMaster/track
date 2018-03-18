@@ -8,6 +8,9 @@
 boolean shouldLatch = false; //Kill Motor
 byte motorPin = 8; 
 byte tiltSensorPin = 9;
+byte pushButtonPin = 10;
+int buttonState = 0;
+int lastKnownBtnState = 0;
 
 #define OK_LED_PIN 13
 
@@ -66,11 +69,13 @@ void setup(void)
     }
     pinMode(OK_LED_PIN, OUTPUT);
     pinMode(motorPin, OUTPUT);
+    pinMode(pushButtonPin, INPUT);
     configureGsm();
 }
 
 void loop(void)
 {
+    buttonState = digitalRead(pushButtonPin);
     MQTT_connect();
     delay(100);
     // int data = getVibrationValue();
@@ -84,7 +89,14 @@ void loop(void)
     // char * latlong  = getLocation();
     char * latlong  = gps_raw;
     processLocation(latlong);
-    processReadings(data, longitude, latitude);
+    if (buttonState != lastKnownBtnState)
+    {
+        // Pressed?
+        buttonState == HIGH ? displayOnly(data, longitude, latitude) : processReadings(data, longitude, latitude);
+    }
+
+    // Save new button State
+    lastKnownBtnState = buttonState;
 }
 
 int32_t getVibrationValue(void)
@@ -107,6 +119,22 @@ void initiaLizeLCD(void)
      lcd.clear();
 }
 
+void displayOnly(int32_t value, float lon, float lat)
+{
+    char values[50] ;
+    snprintf(values,16,"%lu",value);
+    if(value >= 500 || value == HIGH) // Or Analog Read
+    {
+        lcd.print("CRITICAL VALUES");
+        lcd.print(values);
+    }   
+        lcd.clear(); // Remove if causes display failure
+        lcd.print(values);
+        delay(500);
+        lcd.clear();
+        delay(1200);
+}
+
 void processReadings(int32_t value, float lon, float lat)
 {
     char values[50] ;
@@ -115,7 +143,7 @@ void processReadings(int32_t value, float lon, float lat)
     readings.publish(value);
     location_long.publish(lon, 3);
     location_lat.publish(lat, 3);
-    if(value >= 500)
+    if(value >= 500 || value == HIGH) // Remove Section if using Analog Sensor
     {
         lcd.print("CRITICAL VALUES");
         lcd.print(values);
