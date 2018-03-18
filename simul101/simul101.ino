@@ -11,8 +11,8 @@ int status = WL_IDLE_STATUS;
 
 #define AIO_SERVER      "io.adafruit.com"
 #define AIO_SERVERPORT  1883
-#define AIO_USERNAME    "ArthurKen"
-#define AIO_KEY         "c3fc507024c24cb19935eb9b896d11b8"
+#define AIO_USERNAME    "Evans1995"
+#define AIO_KEY         "942e8f0b782e453ea44d570558f62628"
 
 /************ Global State (you don't need to change this!) ******************/
 

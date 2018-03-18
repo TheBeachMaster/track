@@ -135,7 +135,9 @@ boolean shouldLatch = false; //This boolean variable determines whether to run t
 byte motorPin = 8; // We have set the dc motor pin to PWM pin 8
 
 byte tiltSensorPin = 9; // Incase we're using a Tilt sensor instead of an analog sensor
-
+byte pushButtonPin = 10;
+int buttonState = 0;
+int lastKnownBtnState = 0;
 #define OK_LED_PIN 13 // This is the default LED pin on Arduino Mega and UNO we'll use it to indicate status
 
 /*
@@ -191,6 +193,7 @@ void setup(void)
     }
     pinMode(OK_LED_PIN, OUTPUT);
     pinMode(motorPin, OUTPUT);
+    pinMode(pushButtonPin, INPUT);
     configureGsm();
 }
 ```
@@ -207,8 +210,11 @@ In case we're using a Tilt-switch the code should look as follow in the `loop()`
 ```c++
 void loop(void)
 {
+    buttonState = digitalRead(pushButtonPin);
     MQTT_connect();
     delay(100);
+    // int data = getVibrationValue();
+    // data > 500 ? shouldLatch = true : shouldLatch;
     int data = getTiltSensorValue(tiltSensorPin);
     data == 1 ? shouldLatch = true : shouldLatch;
     runMotor();
@@ -218,7 +224,14 @@ void loop(void)
     // char * latlong  = getLocation();
     char * latlong  = gps_raw;
     processLocation(latlong);
-    processReadings(data, longitude, latitude);
+    if (buttonState != lastKnownBtnState)
+    {
+        // Pressed?
+        buttonState == HIGH ? displayOnly(data, longitude, latitude) : processReadings(data, longitude, latitude);
+    }
+
+    // Save new button State
+    lastKnownBtnState = buttonState;
 }
 ```
 
@@ -242,6 +255,26 @@ void loop(void)
 ```
 
 Here's a look at these functions in depth
+
+Displaying message only on push button pressed 
+
+```c++
+void displayOnly(int32_t value, float lon, float lat)
+{
+    char values[50] ;
+    snprintf(values,16,"%lu",value);
+    if(value >= 500 || value == HIGH) // Or Analog Read
+    {
+        lcd.print("CRITICAL VALUES");
+        lcd.print(values);
+    }   
+        lcd.clear(); // Remove if causes display failure
+        lcd.print(values);
+        delay(500);
+        lcd.clear();
+        delay(1200);
+}
+```
 
 Getting vibration value 
 
@@ -456,4 +489,8 @@ void runMotor(void)
 
 
 
-![tilt_sensor_schem](parts.schema/sensor/sw-520d/tilt_sensor_schem.png)
+![tilt_sensor_schem](parts.schema/sensor/sw-520d/tilt_sensor_schem.png) 
+
+![push_btn](parts.schema/btn/push_btn.png)
+
+![push_btn_schem](parts.schema/btn/push_btn_schem.png)
